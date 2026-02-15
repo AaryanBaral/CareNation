@@ -1,0 +1,92 @@
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px 24px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 100%;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+  transform: translateY(-2px);
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Activity List */
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card li {
+  background: #f9fafb;
+  border-left: 4px solid #2563eb;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.card li:hover {
+  background: #e0ecff;
+  transform: translateY(-1px);
+}
+
+.card li strong {
+  font-size: 14px;
+  color: #111827;
+}
+
+.activity-meta {
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.4;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 6px;
+  width: fit-content;
+  letter-spacing: 0.5px;
+}
+
+/* Status Colors */
+.status-badge.approved {
+  background-color: #dcfce7;
+  color: #15803d;
+  border: 1px solid #16a34a;
+}
+
+.status-badge.pending {
+  background-color: #fef9c3;
+  color: #92400e;
+  border: 1px solid #facc15;
+}
+
+.status-badge.rejected {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #dc2626;
+}

@@ -1,0 +1,422 @@
+/* ===== App Container ===== */
+.tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.tree-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.tree-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tree-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* ===== Tree Container ===== */
+.tree-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
+}
+
+.tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 800px;
+  position: relative;
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* ===== Tree Layout ===== */
+.tree-level {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 20px 0;
+  position: relative;
+  width: 100%;
+}
+
+.tree-level:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+.tree-node-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.tree-children {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 40px; /* spacing between child nodes */
+}
+
+/* Ensure children stay under parent for proper split lines */
+.tree-level > .tree-node {
+  flex: 0 0 auto;
+}
+.tree-level > .tree-node + .tree-node {
+  margin-left: 50px;
+}
+
+/* ===== Tree Node ===== */
+.tree-node {
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  border: 2px solid #e9ecef;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 0 15px;
+  min-width: 200px;
+  max-width: 250px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
+  animation: slideIn 0.5s ease-out;
+  color: #1a1a1a;
+}
+
+.tree-node:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  border-color: #667eea;
+}
+
+.tree-node.root {
+  border-color: #667eea;
+  background: linear-gradient(145deg, #667eea, #764ba2);
+  color: white;
+  box-shadow: 0 12px 32px rgba(102, 126, 234, 0.3);
+}
+
+.tree-node.root:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(102, 126, 234, 0.4);
+}
+
+/* ===== Node Content ===== */
+.node-header {
+  text-align: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tree-node.root .node-header {
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.node-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.node-email {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  word-break: break-all;
+}
+
+.node-wallets {
+  margin-bottom: 15px;
+}
+
+.wallet-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.wallet-label {
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.wallet-amount {
+  font-weight: 700;
+  color: #28a745;
+}
+
+.tree-node.root .wallet-amount {
+  color: #90EE90;
+}
+
+.node-id {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  margin-bottom: 10px;
+  word-break: break-all;
+}
+
+/* ===== Update Parent Button ===== */
+.update-parent-btn {
+  background: linear-gradient(145deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.update-parent-btn:hover {
+  background: linear-gradient(145deg, #5a6fd8, #6a4190);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.tree-node.root .update-parent-btn {
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  color: #667eea;
+}
+
+.tree-node.root .update-parent-btn:hover {
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+  color: #5a6fd8;
+}
+
+/* ===== SVG Tree Connections ===== */
+.tree-connections {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.connector-line {
+  stroke: #555;
+  stroke-width: 2;
+  fill: none;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 0.6s ease-out forwards;
+}
+
+@keyframes drawLine {
+  to {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ===== Modal Styles ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: scaleIn 0.3s ease-out;
+}
+
+.modal-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.modal-subtitle {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.modal-form {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(145deg, #667eea, #764ba2);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(145deg, #5a6fd8, #6a4190);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: #f8f9fa;
+  color: #666;
+  border: 1px solid #e9ecef;
+}
+
+.btn-secondary:hover {
+  background: #e9ecef;
+  color: #333;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .tree-container {
+    padding: 20px;
+    border-radius: 15px;
+  }
+  
+  .tree {
+    min-width: 600px;
+  }
+  
+  .tree-node {
+    min-width: 160px;
+    max-width: 180px;
+    padding: 15px;
+    margin: 0 8px;
+  }
+  
+  .node-name {
+    font-size: 1.2rem;
+  }
+  
+  .modal {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tree {
+    min-width: 400px;
+  }
+  
+  .tree-node {
+    min-width: 140px;
+    max-width: 160px;
+    padding: 12px;
+    margin: 0 5px;
+  }
+  
+  .node-name {
+    font-size: 1.1rem;
+  }
+  
+  .wallet-item {
+    font-size: 0.8rem;
+  }
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,126 @@
+.signup-container {
+  max-width: 700px;   /* Was 420px or 460px before */
+  width: 100%;
+  margin: 5vh auto;
+  padding: 2.5rem 2.5rem 2rem 2.5rem; /* More generous horizontal padding */
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.06);
+  animation: signup-fade-in 0.6s ease-out;
+}
+.signup-fade-in {
+  animation: signup-fade-in 0.6s ease-out;
+}
+
+@keyframes signup-fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.signup-title {
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-align: center;
+  color: #111827;
+}
+
+.signup-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.signup-input {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: #f9fafb;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 1rem;
+}
+
+.signup-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  background-color: #fff;
+}
+
+.signup-button {
+  width: 100%;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 0;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+  background-color: #1d4ed8;
+}
+
+.signup-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.signup-link-text {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.signup-link-text a {
+  color: #2563eb;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.signup-error-text {
+  color: #dc2626;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.signup-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 1.5rem;
+  margin-top: 1.2rem;
+}
+
+.signup-form-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.signup-form-actions {
+  grid-column: 1 / span 2;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 650px) {
+  .signup-form-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem 0;
+  }
+  .signup-form-actions {
+    grid-column: 1;
+  }
+}

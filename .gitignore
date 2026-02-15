@@ -1,0 +1,113 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment files
+.env
+.env.*
+*.local
+
+# Node / Frontend
+**/node_modules/
+**/dist/
+**/dist-ssr/
+**/build/
+**/.vite/
+**/.cache/
+**/.parcel-cache/
+**/.eslintcache
+**/coverage/
+**/*.tsbuildinfo
+*.tgz
+
+# Editor / IDE
+.vscode/*
+!.vscode/extensions.json
+**/.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.rsuser
+*.code-workspace
+
+# .NET / Visual Studio
+**/.vs/
+**/[Dd]ebug/
+**/[Dd]ebugPublic/
+**/[Rr]elease/
+**/[Rr]eleases/
+**/x64/
+**/x86/
+**/[Aa][Rr][Mm]/
+**/[Aa][Rr][Mm]64/
+**/bld/
+**/[Bb]in/
+**/[Oo]bj/
+**/[Ll]og/
+**/[Ll]ogs/
+
+# NuGet
+*.nupkg
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+
+# Tooling / profiler
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.pch
+*.pdb
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.vspscc
+*_i.asm
+*.cachefile
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# EF Core / profiler / tye
+*.efcore.db
+*.psess
+*.vsp
+*.vspx
+**/.tye/
+
+# Project-specific secrets
+CareNation-Backend/sec/
+# React misc
+**/.next/
+**/out/
+
+# Docker (if you use it later)
+**/.docker/

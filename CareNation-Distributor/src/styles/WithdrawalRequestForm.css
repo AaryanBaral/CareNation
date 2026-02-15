@@ -1,0 +1,192 @@
+/* Root form card */
+.withdrawal-form {
+  max-width: 480px;
+  width: 100%;
+  margin: 3rem auto;
+  padding: 2rem 2.5rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 1px solid #f3f4f6;
+  transition: box-shadow 0.3s ease;
+}
+
+.withdrawal-form:hover {
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.withdrawal-form h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Label styling */
+.withdrawal-form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+/* Input fields */
+.withdrawal-form input[type="number"],
+.withdrawal-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  margin-bottom: 1.25rem;
+  background-color: #f9fafb;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  resize: none;
+}
+/* Apply border-box to include padding in width calculation */
+.withdrawal-form,
+.withdrawal-form *,
+.withdrawal-form *::before,
+.withdrawal-form *::after {
+  box-sizing: border-box;
+}
+.withdrawal-form input:focus,
+.withdrawal-form textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Button styles */
+.withdrawal-form button {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.withdrawal-form button:hover {
+  background-color: #1e40af;
+  transform: translateY(-1px);
+}
+
+.withdrawal-form button:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+/* Message box styles */
+.withdrawal-form .message {
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.withdrawal-form .success {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #16a34a;
+}
+
+.withdrawal-form .error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #dc2626;
+}
+
+/* Responsive tweak */
+@media (max-width: 500px) {
+  .withdrawal-form {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.modal-box h3 {
+  margin-bottom: 16px;
+  color: #1f2937;
+}
+
+.modal-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.modal-actions button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modal-actions button:first-child {
+  background-color: #2563eb;
+  color: white;
+}
+
+.modal-actions button:first-child:hover {
+  background-color: #1e40af;
+}
+
+.modal-actions button:last-child {
+  background-color: #e5e7eb;
+}
+
+.modal-actions button:last-child:hover {
+  background-color: #d1d5db;
+}
+

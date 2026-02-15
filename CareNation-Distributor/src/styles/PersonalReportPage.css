@@ -1,0 +1,64 @@
+.personal-report-page {
+  padding: 40px;
+  background: #f8faff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.title {
+  color: #2563eb;
+  font-size: 26px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.filter-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.filter-box select,
+.filter-box input {
+  margin: 8px 10px 8px 0;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e0;
+}
+
+.btn-fetch {
+  padding: 8px 18px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-fetch:hover {
+  background-color: #1e4ed8;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.report-table th,
+.report-table td {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  text-align: left;
+  font-size: 14px;
+}
+
+.report-table th {
+  background-color: #2563eb;
+  color: white;
+}
+
+.report-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}

@@ -1,0 +1,164 @@
+/* Root card */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 32px;
+  margin: 30px auto;
+  max-width: 1000px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+  border: 1px solid #e5e7eb;
+}
+
+/* Table */
+.user-report-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.user-report-table thead {
+  background-color: #f3f4f6;
+}
+
+.user-report-table th {
+  text-align: center;
+  padding: 14px 10px;
+  color: #1f2937;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.user-report-table td {
+  padding: 12px;
+  text-align: center;
+  color: #111827;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #fff;
+}
+
+.user-report-table tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.user-report-table tbody tr:hover {
+  background-color: #eef2ff;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #2563eb;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.buttons button:hover {
+  color: #1e40af;
+}
+
+/* Add/Edit Form */
+input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: #2563eb;
+  outline: none;
+  background-color: #ffffff;
+}
+
+/* Save Button */
+button.save-btn {
+  background-color: #16a34a;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+button.save-btn:hover {
+  background-color: #15803d;
+}
+
+/* Add + Search Row */
+.add-search-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.add-search-row input {
+  padding: 10px 14px 10px 36px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background-color: #f9fafb;
+}
+
+.add-search-row .search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.add-search-container {
+  position: relative;
+}
+
+button.add-btn {
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s ease;
+}
+
+button.add-btn:hover {
+  background: #1e40af;
+}
+
+/* Responsive Form Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}

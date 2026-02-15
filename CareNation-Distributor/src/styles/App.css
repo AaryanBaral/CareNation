@@ -1,0 +1,184 @@
+#root {
+  text-align: center;
+}
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.card {
+  text-align: center;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Main App Styles */
+.app {
+  font-family: sans-serif;
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+.app.dark-mode {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #1e293b;
+  color: #ffffff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar-right .profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.navbar-right .profile img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.dark-mode {
+  background-color: #0f172a;
+  color: white;
+}
+
+.main-content {
+  width: 80%;
+  flex-grow: 1;
+  padding: 20px 30px;
+  transition: background 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .app .main-content {
+    margin-left: 0;
+  }
+}
+.export-buttons-card {
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  background: #fff;
+  margin-bottom: 20px;
+}
+
+.export-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #111827;
+  text-align: center;
+}
+
+.export-buttons {
+  display: flex;
+  gap: 12px; /* space between buttons */
+}
+
+.export-btn {
+  flex: 1; /* each button takes equal width */
+  padding: 12px 0;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* CSV Button */
+.export-btn-csv {
+  background-color: #2563eb;
+}
+
+.export-btn-csv:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* PDF Button */
+.export-btn-pdf {
+  background-color: #dc2626;
+}
+
+.export-btn-pdf:hover {
+  background-color: #b91c1c;
+  transform: translateY(-1px);
+}
+
+/* Dark Mode */
+.app.dark-mode .export-buttons-card {
+  background-color: #1e293b;
+}
+
+.app.dark-mode .export-title {
+  color: #fff;
+}
+
+.app.dark-mode .export-btn-csv {
+  background-color: #38bdf8;
+}
+
+.app.dark-mode .export-btn-pdf {
+  background-color: #f87171;
+}

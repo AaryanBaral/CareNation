@@ -1,0 +1,71 @@
+.tree-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+.tree-level {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.tree-node {
+  background: white;
+  padding: 10px 20px;
+  border: 2px solid #bbb;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
+
+/* vertical line from parent node */
+.tree-line-vertical {
+  width: 2px;
+  height: 20px;
+  background-color: #bbb;
+  margin: 0 auto;
+}
+
+/* wraps all children and draws horizontal line between them */
+.tree-children {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+/* horizontal line across all children */
+.tree-children::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #bbb;
+  z-index: 0;
+}
+
+/* each child and its vertical line down */
+.tree-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* vertical line from horizontal into each child */
+.tree-line-down {
+  width: 2px;
+  height: 20px;
+  background-color: #bbb;
+  z-index: 1;
+}
